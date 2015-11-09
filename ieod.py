@@ -10,7 +10,7 @@ import csv
     # zip_ref.close()
 
 #   Make this folder - Input folder zip - Format - yyyymmdd(EOD).zip
-#Home - Sony - Vai - PC
+#Home - Sony - Vaio - PC
 #input_ieod_path = "D:/Project Add on folder/i-darts/IEOD/"
 #Office - Main - HDD
 input_ieod_path = "H:/IEOD/"
