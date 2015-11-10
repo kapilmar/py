@@ -13,7 +13,7 @@ import csv
 #Home - Sony - Vaio - PC
 #input_ieod_path = "D:/Project Add on folder/i-darts/IEOD/"
 #Office - Main - HDD
-input_ieod_path = "F:/1. with_date/"
+input_ieod_path = "H:/IEOD/June 2015/"
 input_ieod_list = os.listdir(input_ieod_path)
 
 # Function to read from the single csvs and to write to one main 
@@ -27,7 +27,11 @@ def nxt(accessCode, stock): # passing access code to append 'ab' if file already
 		
 		#destination file - open and write / append using access code
 		#finalFile = 'D:/Project Add on folder/i-darts/Output/' + stock
-		finalFile = 'F:/Output/' + stock
+		#finalFile = 'H:/Output_IEOD/2015_06/Equity/' + stock 
+		#finalFile = 'H:/Output_IEOD/2015_06/Futures/Continuous Futures/' + stock
+		#finalFile = 'H:/Output_IEOD/2015_06/Futures/Contract Futures/' + stock
+		finalFile = 'H:/Output_IEOD/2015_06/Options/' + stock
+		
 		with open(finalFile, accessCode) as out:
 			
 			#Return a writer object responsible for converting the read data into delimited strings on the given file-like object.
@@ -40,7 +44,10 @@ def nxt(accessCode, stock): # passing access code to append 'ab' if file already
 for folder in input_ieod_list:
 	print folder
 	#final_ieod_path = input_ieod_path + folder + '/1/Equity'
-	final_ieod_path = input_ieod_path + folder + '/Equity/1'
+	#final_ieod_path = input_ieod_path + folder + '/Equity/1'
+	# final_ieod_path = input_ieod_path + folder + '/Futures/Continuous Futures/1'
+	# final_ieod_path = input_ieod_path + folder + '/Futures/Contract Futures/1'
+	final_ieod_path = input_ieod_path + folder + '/Options/1'
 	ieod_path_list = os.listdir(final_ieod_path)
 	#ieod_list.append(ieod_path_list)
 	for stock in ieod_path_list:
@@ -48,6 +55,3 @@ for folder in input_ieod_list:
 			nxt('ab', stock)
 		else:		
 			nxt('wb', stock)
-
-
-				
