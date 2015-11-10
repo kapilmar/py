@@ -20,6 +20,9 @@ for zip_file in input_eod_list:
 	zout.close()
 	zin.close()	
 
+ZipFile.namelist()
+Return a list of archive members by name.
+
     # unzip(zip_file, zip_output_eod_path)	
 	
 # zin = zipfile.ZipFile ('archive.zip', 'r')
